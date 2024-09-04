@@ -8,6 +8,7 @@ import fr.iut.editeur.commande.factory.CommandeFactory;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Document document = new Document();
