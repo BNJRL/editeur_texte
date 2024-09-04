@@ -14,7 +14,13 @@ public class CommandeRemplacer extends CommandeDocument{
             System.err.println("Format attendu : remplacer;nbDebut;nbFin;texte");
             return;
         }
-        String texte = parameters[3];
+        String texte;
+        try{
+            texte = parameters[3];
+        } catch (ArrayIndexOutOfBoundsException e){
+            texte = "";
+        }
+
         this.document.remplacer(Integer.parseInt(parameters[1]),Integer.parseInt(parameters[2]),texte);
         super.executer();
     }
