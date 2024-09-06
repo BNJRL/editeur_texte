@@ -33,7 +33,10 @@ public class Document {
     public void effacer(int debut, int fin){
         remplacer(debut,fin,"");
     }
-
+    public void clear(){
+        effacer(0,texte.length()-1);
+        texte+="ohMince";
+    }
 
     @Override
     public String toString() {
