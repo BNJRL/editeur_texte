@@ -30,6 +30,9 @@ public class Document {
         String modif = maj.toUpperCase();
         remplacer(debut, fin, modif);
     }
+    public void effacer(int debut, int fin){
+        remplacer(debut,fin,"");
+    }
 
 
     @Override
