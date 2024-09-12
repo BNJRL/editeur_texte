@@ -1,0 +1,20 @@
+name : tests_unitaires
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deplacer dans depot
+      uses: actions/checkout@v4
+      - name: Mettre en place Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: 17
+        distribution: 'oracle'
+      - name: Exec test
+      uses: mvn test
