@@ -70,7 +70,6 @@ public class Document {
      */
     public void clear(){
         effacer(0,texte.length()-1);
-        this.texte += "d";
     }
 
     @Override
