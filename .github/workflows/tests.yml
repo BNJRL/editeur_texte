@@ -18,3 +18,4 @@ jobs:
           distribution: 'oracle'
       - name: Exec test
         run: mvn test
+

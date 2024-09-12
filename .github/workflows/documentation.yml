@@ -1,0 +1,29 @@
+name : tests_unitaires
+
+on:
+  push:
+    branches:
+      - 'master'
+
+permissions:
+  contents: write
+
+jobs:
+  jobs1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deplacer dans depot
+        uses: actions/checkout@v4
+      - name: Mettre en place Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'oracle'
+      - name: Generer le site de la jdoc
+        run: mvn javadoc::javadoc
+      - name: Publier contenu du site sur branche derivee
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/reports/apicodcs/
+
